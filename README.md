@@ -1,8 +1,8 @@
  # Archdown
 
  TODO:
+ - make pip pkg
  - coment code
- - all config files in one json
  - select destination folder
  - write better
 
