@@ -5,6 +5,11 @@ import time
 os.chdir(f"{sys.path[0]}")
 
 pwd = sys.path[0]
+
+d = json.load("config.json")
+dbs= d['dbs']
+arch=d['arch']
+
 dbs = open(os.path.join(pwd,"dbs.conf"), "r").read().split()
 arch= open(os.path.join(pwd,"arch.conf"), "r").read().split()[0]
 
@@ -20,7 +25,7 @@ for db in dbs:
         if  not i in asd:
             print (i)
             os.system(f"/usr/bin/rm ./mirror/{arch}/{db}/{i}")
-    
+
 for db in dbs:
     command = f"ls -lh ./mirror/{arch}/{db}/ | grep .pkg.tar. | grep 343"
     token = os.popen(command).read()
@@ -28,10 +33,7 @@ for db in dbs:
     fd.write(token)
     fd.close()
     fd = open("/tmp/dump", "r")
-    
+
     for i in fd:
-        
+
         os.popen(f"rm ./mirror/{arch}/{db}/{i.split()[-1]}","r")
-        
-        
-    

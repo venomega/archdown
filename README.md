@@ -1,6 +1,7 @@
  # Archdown
 
  TODO:
+ - coment code
  - all config files in one json
  - select destination folder
  - write better
@@ -11,7 +12,7 @@
 
  # Usage:
  Just modify the *.conf files acording to where you are going to connect
- 
+
  warning:
  the format of preset.conf is where the $arch/os/$repo thing is chosed
  you must put the part separated, like (arch / db) for $arch/$db
@@ -27,7 +28,7 @@
  http://mirror.yandex.ru/archlinux/x86_64/os/extra
  http://mirror.yandex.ru/archlinux/x86_64/os/multilib
  http://mirror.yandex.ru/archlinux/x86_64/os/community
- 
+
  to start downloading just type
  $ python __init__.py
- on program directory and it will do the work 
+ on program directory and it will do the work

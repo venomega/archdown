@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 import time
-
+"""
+this file is intended to an limit in time for downloading
+someting that work only in my country
+"""
 def isCopyTime():
     the_clock = (time.localtime())
     """

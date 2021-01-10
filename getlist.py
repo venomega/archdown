@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 import os
 import sys
+import json
 os.chdir(sys.path[0])
-
-dbs=open("dbs.conf", "r").read().split()
-arch=open("arch.conf", "r").read().split()[0]
-url=open("url.conf", "r").read().split()[0]
+d = json.load("config.json")
+dbs= d['dbs']
+arch=d['arch']
+url=d['url']
 total= 0
 fore= open(f"./mirror/{arch}/size", "w")
 for db in dbs:
@@ -28,7 +29,7 @@ for db in dbs:
     for i in fd:
         if not "pkg.tar." in i:
             continue
-    
+
         token = i.split()
         for i in token:
             if not '.' in i or len(i) < 6:
@@ -45,4 +46,3 @@ for db in dbs:
     fd.close()
 
 print (f"TOTAL\t\t %.2f MB" %(total), file=fore)
-

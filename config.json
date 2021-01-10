@@ -1,0 +1,6 @@
+{
+  "arch":"aarch64",
+  "dbs":"core aur alarm extra community",
+  "url":"http://tw.mirror.archlinuxarm.org/",
+  "preset":"arch / db"
+}
